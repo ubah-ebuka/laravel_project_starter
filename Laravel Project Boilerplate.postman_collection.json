@@ -1,0 +1,2800 @@
+{
+	"info": {
+		"_postman_id": "50f2f90b-8aa6-44d3-8cd9-b0b057621d93",
+		"name": "Laravel Project Boilerplate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7028634"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Auth/User",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "eyJpdiI6IjZQNVRha0VOWDlzcnFoTU5qL0ttMGc9PSIsInZhbHVlIjoieElHZWU5czV3OW82Rk8zcG5hdUJDVmphcDBtdmx0Vk05VnZ4SnFuUWlqSlZSYm1UR2c1NHFVVWUxWVlVTnp0OUFBL25Qb0t5TjlSUDNITVpyQmFJVjl3UlVkTkFkdkhqTjhZMmZJaWE2Sm02TWRhSjV2UXA3emVYMVhtUTFKeHoiLCJtYWMiOiIzNzNmNWUyNmE2NzFiODkxM2IxNmVjODU5ZjI4Y2U0ZDU0N2Y0OGFhM2Y5NmI4YjA3OTI5NTAxNzAxZDQyMWQxIiwidGFnIjoiIn0=",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"abdul.kareem@gmail.com\",\n    \"password\": \"High1234@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CUSTOMER_BASE_URL}}/auth/login",
+									"host": [
+										"{{CUSTOMER_BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful Login",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-XSRF-TOKEN",
+												"value": "eyJpdiI6IjZQNVRha0VOWDlzcnFoTU5qL0ttMGc9PSIsInZhbHVlIjoieElHZWU5czV3OW82Rk8zcG5hdUJDVmphcDBtdmx0Vk05VnZ4SnFuUWlqSlZSYm1UR2c1NHFVVWUxWVlVTnp0OUFBL25Qb0t5TjlSUDNITVpyQmFJVjl3UlVkTkFkdkhqTjhZMmZJaWE2Sm02TWRhSjV2UXA3emVYMVhtUTFKeHoiLCJtYWMiOiIzNzNmNWUyNmE2NzFiODkxM2IxNmVjODU5ZjI4Y2U0ZDU0N2Y0OGFhM2Y5NmI4YjA3OTI5NTAxNzAxZDQyMWQxIiwidGFnIjoiIn0=",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"abdul.kareem@gmail.com\",\n    \"password\": \"High1234@\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{CUSTOMER_BASE_URL}}/auth/login",
+											"host": [
+												"{{CUSTOMER_BASE_URL}}"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Nov 2025 09:08:55 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6IlBibVhhYmV5ZWRlVFh3dW9OeUl0QVE9PSIsInZhbHVlIjoiL2RzbWV6bVg3eGZHYmFuQ0pDSDZQZGU4VVQ2UCtpZXB1M29aV25kTEEzVlgwUFpNY3cyMGNYUzhkbTVRdW5qRER6OHNMdFFQSXcweGtEZUM4K1hJNk1TU3FCRUNMOXlNUzRGSUtpQ1RuUnBUTzdPVTh0bmVGaDlsVFM5a01mYTAiLCJtYWMiOiI1MTM0YzdkYTljZTQ2MTM2NWEyMDVlYzE5YWIxZjJkN2RlMGYxZmUyYjNkNjAxNzc1NjY3MjNkNWEzMTZlZDkzIiwidGFnIjoiIn0%3D; expires=Sat, 15 Nov 2025 11:08:55 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6IkxsN25pdnY1bU8rWjNRVjdaZzdjYnc9PSIsInZhbHVlIjoiUkhFWGgrY1JDajVFSExHZXFRdytVbjgxREpSTXRKZENCMUdDYUNqWS9LSUkybWV6Z05VMk9GdTRMaXJtRVY0d1FmSEdnWDdVMjhid1RRQUZ6K096azlyTUdOWmdMWVBnU0JMMnp5MGlIdDR6ZDkwcHRuaDBUUkpxSTlVamQya0siLCJtYWMiOiI0MTMzNGJjNzk0ZjVhNWQwNDU2ZWQ4MTVkNTMyMWYyYTM5NmM4ZmM2ODI4NWU4NjNiNmRiMzM0NzIwYzliNmNmIiwidGFnIjoiIn0%3D; expires=Sat, 15 Nov 2025 11:08:55 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Logged in successfully.\",\n    \"data\": {\n        \"id\": 2,\n        \"first_name\": \"abdul\",\n        \"last_name\": \"kareem\",\n        \"email\": \"abdul.kareem@gmail.com\",\n        \"phone\": \"08012121212\",\n        \"permissions\": [\n            {\n                \"id\": 1,\n                \"name\": \"Customer Dashboard Access\",\n                \"identifier\": \"access_customer_dashboard\",\n                \"type\": \"customer\"\n            }\n        ]\n    },\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Signup",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"first_name\": \"Abdul\",\n    \"last_name\": \"Kareem\",\n    \"email\": \"abdul.kareem1234@gmail.com\",\n    \"phone\": \"08012121216\",\n    \"password\": \"High123@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CUSTOMER_BASE_URL}}/auth/register",
+									"host": [
+										"{{CUSTOMER_BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful Registration",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"first_name\": \"Abdul\",\n    \"last_name\": \"Kareem\",\n    \"email\": \"abdul.kareem123@gmail.com\",\n    \"phone\": \"08012121215\",\n    \"password\": \"High123@\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{CUSTOMER_BASE_URL}}/auth/register",
+											"host": [
+												"{{CUSTOMER_BASE_URL}}"
+											],
+											"path": [
+												"auth",
+												"register"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Nov 2025 09:10:05 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6InVhNFZTbFVOOTAyQndyQ1l3b3NvcUE9PSIsInZhbHVlIjoiRDBQRnJHdjcwamVQc3BrSG1hL3FQUEMyL1dCdjhwQlZYSlExY0xjdFRvTStWbnJMRXRqUVBGWmIzTStpdzY3WFkwSTJBRm8xSkNUL2NnTmR1UWVNOFpPQWZON21QcnM1SHNCdXJDdzN6TldDc1gvSlp4eFJHeDRVclZzTzcrZWwiLCJtYWMiOiJlMTI4YzU1ZmYxZThmNjE5MWVmY2QwOWY4MWQyOTY1YjE2YzZmYmVlMjE4Y2U5MmVhMDE4NDVjY2RjYmE0NTBmIiwidGFnIjoiIn0%3D; expires=Sat, 15 Nov 2025 11:10:05 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6IkkyQ0s3RnRkVkpDNkxhcXNnYldka1E9PSIsInZhbHVlIjoiUDAyYkxnSkRjeC9WTkhTblJJYnFwN0ZmRHd2Rk9BQW1BNEt5OWJ3Q3JBQWlER2U1bHF6ekVnQ1d5dURCd1dUUVdKRSttR0piVVZwWWFWY292bWorVzYzcE5qV3ZHajJVR2xGVTd4OHBVbzgwdEdVM1YrelFUNVN1bWRHRlJ4Y2IiLCJtYWMiOiIwYWQ2ZTEzZDJlMDYzZmNmNTIxN2IxZjU2M2I0ZGI0MzM3YTk0MTVkMjUyMmE3NWI4YjRjMWJhZTg0NTYyYzhjIiwidGFnIjoiIn0%3D; expires=Sat, 15 Nov 2025 11:10:05 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Registered successfully.\",\n    \"data\": {\n        \"id\": 4,\n        \"first_name\": \"abdul\",\n        \"last_name\": \"kareem\",\n        \"email\": \"abdul.kareem123@gmail.com\",\n        \"phone\": \"08012121215\",\n        \"permissions\": [\n            {\n                \"id\": 1,\n                \"name\": \"Customer Dashboard Access\",\n                \"identifier\": \"access_customer_dashboard\",\n                \"type\": \"customer\"\n            }\n        ]\n    },\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Password Reset",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"abdul.kareem@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CUSTOMER_BASE_URL}}/password/reset",
+									"host": [
+										"{{CUSTOMER_BASE_URL}}"
+									],
+									"path": [
+										"password",
+										"reset"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successfully Sent Password Reset Link",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"abdul.kareem@gmail.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{CUSTOMER_BASE_URL}}/password/reset",
+											"host": [
+												"{{CUSTOMER_BASE_URL}}"
+											],
+											"path": [
+												"password",
+												"reset"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 14 Nov 2025 07:11:33 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6IjZwcC9DSHhQY2pITDFFV0l6eElLZWc9PSIsInZhbHVlIjoiNW8zaDAzcTRhWEdHLzJyR3Q4OVNIQXZhaEthV3JZaXlrNGFONEpub2RxZWNVczFLQU1ldHVlZnF1ZENvNGM1cjZsdkFtL0NvZUtydFBFcnVvZUN4Q2tDbmN1MWNuN082UzY4Z21yWXVjK0xGN1lnTWVWbmRITXI4K1VpN0lvL1UiLCJtYWMiOiIxNTYzMTk2MDA3ZjFiMGVjNTIzMTBkNmUwOTBhMGVmYTBmODMxMWExZTVkMjAwNDRiZGNhYWI2N2UzODk3YmY5IiwidGFnIjoiIn0%3D; expires=Fri, 14 Nov 2025 09:11:33 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6InRSRC9QUDdpTkI4UjlwZlpUS2R6cHc9PSIsInZhbHVlIjoiSWI5WDRXY2Y3ZWMrYVZRZTNXZTYvMnBDS2xVU0RvMmxwN24yUkpwTzhwcjJJckIzbElhSnUzYzZlVkRXUXljMDlSdEFYUkdoMDFETGZzZ1ZXSzhITnBGMWYydXBWMkxSTEg1R1Q4OEtsemU2R3lIQW1wQkJxcWFIYXV2emFSS1EiLCJtYWMiOiIzM2Y0NjlkZTVkZmZjMTA5ZWNlNWRmMzQ2NzM1YTcwMzE5OWEzNzMzMWM3NDIwMzk3ZjM3MTVkMTBhMjBmNmYzIiwidGFnIjoiIn0%3D; expires=Fri, 14 Nov 2025 09:11:33 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Password reset OTP sent to your email.\",\n    \"data\": null,\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Verify Password Reset",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"password\": \"High1234@\",\n    \"password_confirmation\": \"High1234@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CUSTOMER_BASE_URL}}/password/verify?email=abdul.kareem%40gmail.com&expires=1763270569&token=765229&signature=b64dc10e650e5043c175cd667af70dbf89ce8dfa845dcef8c84e26dba4827802",
+									"host": [
+										"{{CUSTOMER_BASE_URL}}"
+									],
+									"path": [
+										"password",
+										"verify"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "abdul.kareem%40gmail.com"
+										},
+										{
+											"key": "expires",
+											"value": "1763270569"
+										},
+										{
+											"key": "token",
+											"value": "765229"
+										},
+										{
+											"key": "signature",
+											"value": "b64dc10e650e5043c175cd667af70dbf89ce8dfa845dcef8c84e26dba4827802"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful Password Reset Verification",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"password\": \"High1234@\",\n    \"password_confirmation\": \"High1234@\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{CUSTOMER_BASE_URL}}/password/verify?email=abdul.kareem%40gmail.com&expires=1763105539&token=161844&signature=444f7e8fdcc82054578df44fa42820fe409480005dc82fba6877a66d0ecaa7bd",
+											"host": [
+												"{{CUSTOMER_BASE_URL}}"
+											],
+											"path": [
+												"password",
+												"verify"
+											],
+											"query": [
+												{
+													"key": "email",
+													"value": "abdul.kareem%40gmail.com"
+												},
+												{
+													"key": "expires",
+													"value": "1763105539"
+												},
+												{
+													"key": "token",
+													"value": "161844"
+												},
+												{
+													"key": "signature",
+													"value": "444f7e8fdcc82054578df44fa42820fe409480005dc82fba6877a66d0ecaa7bd"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 14 Nov 2025 07:24:05 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6InVTa1pqUEozS21Lbi9IWWYvdXFkTkE9PSIsInZhbHVlIjoiSTJKZ295Uk4vQ0IrVzFSZHVQL0FCQkgrZGFvS0ZLRSt3aFhLVW13eCtURHJIWVNnMDJ6eERLNGk5Sk05YU8zT1BWWVhCTVNsTDlvT3lTaTVWV25ubXY1V3F3WWNLa0FJc1psaDNodlZvYWk5VmhjajZkcmk1cFAzTHN6TnBsYm0iLCJtYWMiOiJhYTgwODJhZmFhOGRiNTkxODBiMWQwMTQ4MjIzNWUxYzFhMDM2YzU1ZWMyNWQ2YjlhOWMyMjliODAwNTYxM2Q3IiwidGFnIjoiIn0%3D; expires=Fri, 14 Nov 2025 09:24:05 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6ImJGUHViVStvK29iQ0I4d0lGZWJVcHc9PSIsInZhbHVlIjoiNm5lVGFySGpUd2xrdWJQaVhaWjdhT1FKZGhSWU1kc3VNakJFZ0twOUp1Mm04VXUvVi95bitqaHhNWm5INlFidU9ySU1jUHBxQ0FrS0E1OUtMZkNXdmhJR25McGZFTHUyVUVYbzByYzh5NTJvOFI0QlN6U3llYjdCQk1SVUJ2ZmkiLCJtYWMiOiJlMTZkMGM1Zjg3NTFjNzc5ZmZmMDZjMTc5OWY4YWI2YTYyZGJhNWViZGEwOTJhMWQyZjEwZjE1NDkyOTUxNTliIiwidGFnIjoiIn0%3D; expires=Fri, 14 Nov 2025 09:24:05 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Password has been reset successfully.\",\n    \"data\": null,\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Send Email Verification Link",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CUSTOMER_BASE_URL}}/email/send-verification",
+									"host": [
+										"{{CUSTOMER_BASE_URL}}"
+									],
+									"path": [
+										"email",
+										"send-verification"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Email Verification Sent Successfully",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{CUSTOMER_BASE_URL}}/email/send-verification",
+											"host": [
+												"{{CUSTOMER_BASE_URL}}"
+											],
+											"path": [
+												"email",
+												"send-verification"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 14 Nov 2025 04:26:56 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6Ik84YkJTU1VTMUdLSzVZNFY5bTdGYmc9PSIsInZhbHVlIjoibzJod3lUM0ZhcjRDSUtwNEkrUlNZdnFDV2o2LzJzYTNQQ3NWSVBCMzFZZkFzbUQ4MFM2TlVYZHRmUjFnTkRWL0JidGoreVFEcEsyRVJTL25wU2RhNmpWQU1NVllNVlJuRXJabW52Z3hQak9Uanh2S2VxK1FWVmpWQnN3Tkp0OFYiLCJtYWMiOiI3MTYzZmQ4NmNhMGE1MDAyZTAzNDc2ODBlZjQ3NWViY2U0NTc2ZmNhYjE3NDQxODgxMGVmNjY3N2NkYmUyNTc3IiwidGFnIjoiIn0%3D; expires=Fri, 14 Nov 2025 06:26:56 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6ImErbks0SXlVRzBVTUtnT0F4SkJ4UEE9PSIsInZhbHVlIjoiSis4bnAreGhNNk5TaFZKTzRxNXhGY2M0ZW5HNkdZQmptVXg3Q1JIend5S3RibzRWK3hYNy9oNE54cnN3ZzZTTDhxSEQ4enFSZ3dxa0hlWTJWa2c2czdtRW1sUUVtZ2o4TDBSWU1rY2RoM01tek5Xa0xCREZERUhKbWxyeFhmOXAiLCJtYWMiOiI4Zjg5MTAwZWYxMmM0MzdmOGI2MzliZmM5OGFkNTg0MjhmMjQ2ZmY1ZDE3NWNiNGViMTc0Y2FjNjY1MWY4YmY0IiwidGFnIjoiIn0%3D; expires=Fri, 14 Nov 2025 06:26:56 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Email vefification OTP sent to your email.\",\n    \"data\": null,\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Send Phone OTP",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CUSTOMER_BASE_URL}}/phone/send-verification",
+									"host": [
+										"{{CUSTOMER_BASE_URL}}"
+									],
+									"path": [
+										"phone",
+										"send-verification"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successfully Sent Phone OTP",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{CUSTOMER_BASE_URL}}/phone/send-verification",
+											"host": [
+												"{{CUSTOMER_BASE_URL}}"
+											],
+											"path": [
+												"phone",
+												"send-verification"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 14 Nov 2025 06:49:57 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6ImJWY3JZVnFNTU5KVU1kZjRNdTdLNFE9PSIsInZhbHVlIjoidTdra284bFppWGhId05qTmxhd09NVHJjVGVldFZJejBXaENNNUx2b3d3WVZ1Tk5DNE81WklDV2xQSWJoWEZuelJlWXBCNWZCV20yTDlQRWM3YnA5SExLOXJDQWhkcWdpWmloV2xqS2NFS0IrMURtNkpnUDd0bnI2cTBoZkFRUmEiLCJtYWMiOiJjODg4NDc0NGNlM2EwZGYyZTdlODAzNDU1OWJhYmU0OWNmMjQ2ZWI4NDAyODYzN2U2N2I1ZDAxZWY4MmQ0Nzk4IiwidGFnIjoiIn0%3D; expires=Fri, 14 Nov 2025 08:49:57 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6IjJnaWZSaS91RnlnK3JCVWJsTzAzOWc9PSIsInZhbHVlIjoiRktDaFN3cmNNU1lvam96bHdTMTVGRUlCYmlqUUVZc1VHQ01PWXBkMGptaDNKU2VQSjFEZmRhbUpvYXVHSW1BaHM4c2xxUGR6Tm5zRjF2ZVhBNnFUeS9OdElVZE5iT05wcTlobmtYcVphNHZPaUZ0WS9waEhDbjJnYW1yM3FwK0UiLCJtYWMiOiI0NDkyZjk2NjJhOTA2ZGY3ZDQ5YjQyYTkwMmY4Y2NmZDdiYjU4OGI5NzA1ZmE0N2NhZDc4NmU2MDI0ODFhMzU5IiwidGFnIjoiIn0%3D; expires=Fri, 14 Nov 2025 08:49:57 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Phone number vefification OTP sent.\",\n    \"data\": null,\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Fetch User Details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CUSTOMER_BASE_URL}}/auth/user",
+									"host": [
+										"{{CUSTOMER_BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"user"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful User Details Fetch",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{CUSTOMER_BASE_URL}}/auth/user",
+											"host": [
+												"{{CUSTOMER_BASE_URL}}"
+											],
+											"path": [
+												"auth",
+												"user"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 14 Nov 2025 07:01:53 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6Ikl4SkVxWUd0Sm51dlhOd0NOTm9KNkE9PSIsInZhbHVlIjoiMEh1UUk1MXlTYm1RNnhXUzJyK29RbXlrSEpWQmRYTG9KNVdOcnEzQUZJYnpGVDIxelZxeVFUQlV2ZDNvWENENm50Q21YS1doQ3EyWVgzQUpveDN0dkJvNDE1N2krS1BQR0JKcW15N3JoRVVUZTdBVmhzSk0vMHJ4MzRLVGhvWEIiLCJtYWMiOiJiYzNjNDZlYTQ2OTY0NzFlZDVmNjdjOWUyYmMwZDI5YjU4YWRmMTMzNmMyYjMxYmRlNjU5NzY4ZDY1ODBjNTgxIiwidGFnIjoiIn0%3D; expires=Fri, 14 Nov 2025 09:01:53 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6Ikt1VWYrVlB6enc5bzRIRnNyQml0ckE9PSIsInZhbHVlIjoiVmdYUDJXYWM5eDJDVG12TjJvOEZDR0ZwcngzanRqNGFUQWh2WU1XL0RsVXhDQUhYV1dwckd1OVRxWlJFWTUvd2htOVhXMWJYdWZiRklrMUEySUNLMFBRd1NDbU5PeTFuNHpMNE9PUVBKQ2VkZG9WRnFKalgxYTQ5WVBzTy96UlciLCJtYWMiOiJlYTFkMjU0ODA5NjZlNGQ1NGQ0YmVmZDg1YTI4ZGFiZWViMzA2MDZjZmMzNWU3Nzg3YmY5MmI0NzFkM2E0NDhlIiwidGFnIjoiIn0%3D; expires=Fri, 14 Nov 2025 09:01:53 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"User profile retrieved successfully.\",\n    \"data\": {\n        \"user\": {\n            \"id\": 2,\n            \"first_name\": \"abdul\",\n            \"last_name\": \"kareem\",\n            \"email\": \"abdul.kareem@gmail.com\",\n            \"phone\": \"08012121212\"\n        },\n        \"permissions\": [\n            \"access_customer_dashboard\"\n        ]\n    },\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Verify 2fa",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CUSTOMER_BASE_URL}}/auth/logout",
+									"host": [
+										"{{CUSTOMER_BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful Logout",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{CUSTOMER_BASE_URL}}/auth/logout",
+											"host": [
+												"{{CUSTOMER_BASE_URL}}"
+											],
+											"path": [
+												"auth",
+												"logout"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 14 Nov 2025 03:52:03 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6ImpDVUlZSDBXaW03bUswV01CbGRLRHc9PSIsInZhbHVlIjoiQ3k1Wmp3TmxSTm1oc1BzU0dqRVlnbHJvbFBPRnI3T05lcVNscXp1aXpBZTR3Rk1XWm80UGxoaVZ1UUVSNkpGSEd1b3BEcU85NjF1NzQzSUlFNmpVdFFmY3N3YTAwT3hNV0ZPd0FlSXNBamJBV2d6RzMzZGVVeUNNMXZ4dGxSR1QiLCJtYWMiOiJjOTBjZjYyMTJkYTAxZjFiYjU5OTUxMTI2OWI4MWM5MGE1ZjY3NWRkODU1ZTYyNDc4MGQzZjhhN2YwZDY3OTZlIiwidGFnIjoiIn0%3D; expires=Fri, 14 Nov 2025 05:52:03 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6IlRQN09VRnBvUnl1OThYNGdRaGIvZlE9PSIsInZhbHVlIjoiSkVwV2Z6UlpRR1IwQm15TTBsbm5hYVFnbDRwakpPSWM2RFVjcU0xOFhRSlU4KzhscDRaVko0amV1eTZIZ2xqTFV2TnEvWFZzV3JpM0JUd1B4TzFVN0FUcUI1REc5d09SR1Q0dlN3OVA1YW5QWXc5OEkxcFpmZGZHQStDTk5reVkiLCJtYWMiOiI3OGYyOWEyZjZmZjhiMTBmOTU1ZjFmOGQ2NDI2YWYwZDQ3ODc4MmU2NDE3MmYyYWY4Y2VlZGI5NjQ3MWU2NWIxIiwidGFnIjoiIn0%3D; expires=Fri, 14 Nov 2025 05:52:03 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"User logged out successfully.\",\n    \"data\": null,\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Verify Email",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CUSTOMER_BASE_URL}}/email/verify?email=abdul.kareem%40gmail.com&expires=1763270677&token=247321&signature=93eab2fe65de966ff2de3118acfaa2be99379ad1c2e8169dac323735557306d3",
+									"host": [
+										"{{CUSTOMER_BASE_URL}}"
+									],
+									"path": [
+										"email",
+										"verify"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "abdul.kareem%40gmail.com"
+										},
+										{
+											"key": "expires",
+											"value": "1763270677"
+										},
+										{
+											"key": "token",
+											"value": "247321"
+										},
+										{
+											"key": "signature",
+											"value": "93eab2fe65de966ff2de3118acfaa2be99379ad1c2e8169dac323735557306d3"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful Email Verification",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{CUSTOMER_BASE_URL}}/email/verify?email=abdul.kareem%40gmail.com&expires=1763095016&token=743002&signature=4512ff62f89fd11acb43d75140b6a1bdc7fa221508afed92d33b9feefa9a1699",
+											"host": [
+												"{{CUSTOMER_BASE_URL}}"
+											],
+											"path": [
+												"email",
+												"verify"
+											],
+											"query": [
+												{
+													"key": "email",
+													"value": "abdul.kareem%40gmail.com"
+												},
+												{
+													"key": "expires",
+													"value": "1763095016"
+												},
+												{
+													"key": "token",
+													"value": "743002"
+												},
+												{
+													"key": "signature",
+													"value": "4512ff62f89fd11acb43d75140b6a1bdc7fa221508afed92d33b9feefa9a1699"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 14 Nov 2025 04:34:15 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6ImJMalp3VDIyMDNENzFWS1Y1cTFpZXc9PSIsInZhbHVlIjoiOFBobzFaSkdGaXZULzdoeVNHRERjTmU4TUEybWlSZ2p1cE1MT0QvbzQ0d2cxelp4MUxlMGpMVjgxdDM5QnFUU1JORnkrRUo3eCtRbmsyWFNiU05VZkt2UlBYaldqRm1NRHhHQ1V4T3BxOTB1eHZRQk5zRlJMZ29DR1JINktKRDkiLCJtYWMiOiI1YTlhNGU0YTkxOWMwOTE2Yzg4MTBkNzBkMjQyN2I0YmEwNWMxOTcwY2FiOWQwMDA4OTIwOWNmODgxNzk2MjhiIiwidGFnIjoiIn0%3D; expires=Fri, 14 Nov 2025 06:34:15 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6IjRpY1hzajB3VEFHU0lORHlMMjdOaVE9PSIsInZhbHVlIjoiNktydnJFV09Kb1YvbWtnMVN3c2dpZ0JwTThRbEIrYWpaSHpCU2NnWExqenFDT2RzL1hBOE50V0JYekdpVUsrcld0d2ZLMGpiaEkxQitWSld2YXpXR205aVpwTEtwaG1yRmhObHEydjhQb3c0KzV5eWFHWUJscXZNMFVmVFJsWmQiLCJtYWMiOiIxNjRmY2Q0NzgyMWUzNjM4YjQ3ZDA4YjNjZjU1OTcxMDU1OTM1ZGNlNzc0OTM2YzQzYTA5YjA5OWEyNjI2YzRhIiwidGFnIjoiIn0%3D; expires=Fri, 14 Nov 2025 06:34:15 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Email verified successfully.\",\n    \"data\": null,\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Verify Phone Number",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"token\": \"321585\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CUSTOMER_BASE_URL}}/phone/verify",
+									"host": [
+										"{{CUSTOMER_BASE_URL}}"
+									],
+									"path": [
+										"phone",
+										"verify"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful Phone Number Verification",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"token\": \"149742\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{CUSTOMER_BASE_URL}}/phone/verify",
+											"host": [
+												"{{CUSTOMER_BASE_URL}}"
+											],
+											"path": [
+												"phone",
+												"verify"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 14 Nov 2025 07:01:15 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6ImhoV0hWc2lFOW1uR0crdkpmQjdSNnc9PSIsInZhbHVlIjoiSVhyWWN5cnYxVzVyMzBrQkhzdGhJb1R2ZGwrc0J5dXdna2ZGSmZYY3dLaDNiTHZ6d3R4N01EQWpQdTdWTlNPcGlkNHV3OVMxVG1OWFRFNEIrUVJaUVQvWk9SQ0pZbk9UOEpmbDc5SDdpZjUyekFKdDVRSE81dDRrQXN5S3BqRjQiLCJtYWMiOiJmNTlhZGRjZjk0MWY5MGY0MDY5NTJiN2NiZmI4MmJhMWVjNGJhMzg1OGViMDRjYWRhM2YwMGIyODc0ZDA1YTIyIiwidGFnIjoiIn0%3D; expires=Fri, 14 Nov 2025 09:01:15 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6Ii95SW02a09VdEsvd1hXcEFlbXZvNmc9PSIsInZhbHVlIjoiOUcrUGM1c3dET3JqcjFlRjNLdU1zUnI3cllMeXlpTEFxU05GZXlWTyt1TUloaFdMM1dSOTc4akxXWE03RGNNQml5SnRENVFuK0l4MFR1YVF5VWx1Zk5jajFrRW05anU5QU5HeExFMDYyZGwrYlBSanh2MEh0Zlk1S1RoRzV0NXoiLCJtYWMiOiI5NDdmZDNmMjZjOTZiMzczOTc5OTZhYjFkMmE4OTk2MzEzN2NlMzNhZmQyNWI3MWNmNjkzYTg5MDc5NDk0NThhIiwidGFnIjoiIn0%3D; expires=Fri, 14 Nov 2025 09:01:15 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Phone number verified successfully.\",\n    \"data\": null,\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Change Password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"old\": \"High1234@\",\n    \"new\": \"High123@\",\n    \"new_confirmation\": \"High123@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CUSTOMER_BASE_URL}}/password/change",
+									"host": [
+										"{{CUSTOMER_BASE_URL}}"
+									],
+									"path": [
+										"password",
+										"change"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful Password Change",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"old\": \"High1234@\",\n    \"new\": \"High123@\",\n    \"new_confirmation\": \"High123@\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{CUSTOMER_BASE_URL}}/password/change",
+											"host": [
+												"{{CUSTOMER_BASE_URL}}"
+											],
+											"path": [
+												"password",
+												"change"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 15 Nov 2025 09:12:26 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6InVBbnQvWElBcmpNWGNWN3lpd2VSamc9PSIsInZhbHVlIjoidW1oVmo2aU41R3RoYTE4TEFqVUlZQnhYOWRET2txM0d5RHN6Z04rK1BtMHNKd2daU0ovTHVXOFU3U3ZOSUlmdWJLWnU5T3U0MDdLdXdXZVFnckNIZXNTbkljLzFzYVRIUklOdjd4VFNiRHl6djNYUkNJWmhnaG5XQThVc0Z3ZEciLCJtYWMiOiJiNWM3MjY0NjQ1NzkxOWQ4MjBhNjg4Mzc3MTdjZWIxYzBlNWZiMTY2ZjY5NDJiNDk5NDg5ZjJkMGFkYjVjMDBjIiwidGFnIjoiIn0%3D; expires=Sat, 15 Nov 2025 11:12:26 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6Indwcnh0NUZCSnRpdUxzN1c5NTZVWUE9PSIsInZhbHVlIjoiczlsM0ZIdjFSL1FyL0ZYV0JFOHkwZFlweHg3b2F3ekNUeU1BSEJNc1NHMlRWc0tTZmU0UHk5K0dPUHVIQ0lIa1BNdmxSOCtBKzBJRXpzVjU5cVl4L1Zyb1lwUXZDbXZpaFdzLzVSUWdYekFIY3pQa1NjMHRRaklEQjZHcUFZbHEiLCJtYWMiOiJmMmZiOWY3ZGQ1NWQ5Y2M2ZmZjZGY1MThkM2VmNGEwNzFhYmNlMDYyMGQ4OTBlNWFhNDhkODY3ZDMwZWIzNDRjIiwidGFnIjoiIn0%3D; expires=Sat, 15 Nov 2025 11:12:26 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Password updated successfully.\",\n    \"data\": null,\n    \"errors\": null\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Auth/User",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin@admin.com\",\n    // \"email\": \"prosper.faith@gmail.com\",\n    \"password\": \"123456\"\n    // \"password\": \"High123@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ADMIN_BASE_URL}}/auth/login",
+									"host": [
+										"{{ADMIN_BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful Admin Login",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"admin@admin.com\",\n    \"password\": \"123456\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ADMIN_BASE_URL}}/auth/login",
+											"host": [
+												"{{ADMIN_BASE_URL}}"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 16 Nov 2025 05:16:36 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6InREa2dWdUhYYmo2ODVUeHpyRkQ1TFE9PSIsInZhbHVlIjoiUzRTaVp5cW5JYXhzYWw1bmM5ZnN4NHpZYzlHTVhJdG5UZzRVaHNTeXZmS20wS2hXMEtGdmVQdHB2amxSaXozYmt3SjlOQ2pWN3NjZytRNUpaVHNzOCtMWU90OXIydXhUQzdLc3l0clZ3VmdvR00wOVEranNqRmxWVUJTejU5NFIiLCJtYWMiOiIzNzRlN2I5ZjViMjM3MzQzNDdhYTJhMzViMGU3MDEwMWRlMTZhMjU3NDEyNzRmOWJhM2MxNjk2NGIxODg2NGFmIiwidGFnIjoiIn0%3D; expires=Sun, 16 Nov 2025 07:16:36 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6IkdGNTd5amFuVzlITHRzdGVzR0s0K1E9PSIsInZhbHVlIjoid296Y1lJQW5xOFhqZ3Y1RjU0Y2U4ZXFtdXJGd1pYSlRCTWdFSWM1QnZLZlZSVFc0Z0tyZ0gzdGRWSGowVXJvZDFyZDZ3NnYyYXNiR3NxT0JCczZ5SFgxZ085UUlCa2F0V3RsNUs0b2ZyRzN0dFhmNjh2R1R6Z2FPaVZDSnZYTUciLCJtYWMiOiI3MGExNGYwNWExNDU0NTU3MmI0YTA1YzYwMTNlNGExM2IyYzM0ZmY1NTQ0ZDI5MTJmMjliZmVlNDdlY2FhYTI2IiwidGFnIjoiIn0%3D; expires=Sun, 16 Nov 2025 07:16:36 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Logged in successfully.\",\n    \"data\": {\n        \"id\": 1,\n        \"first_name\": \"Admin\",\n        \"last_name\": \"Admin\",\n        \"email\": \"admin@admin.com\",\n        \"phone\": \"08011111111\",\n        \"permissions\": [\n            {\n                \"id\": 2,\n                \"name\": \"Admin Dashboard Access\",\n                \"identifier\": \"access_admin_dashboard\",\n                \"type\": \"admin\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Add Admin\",\n                \"identifier\": \"add_admin\",\n                \"type\": \"admin\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Update App Settings\",\n                \"identifier\": \"admin_update_app_settings\",\n                \"type\": \"admin\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Map Role Permissions\",\n                \"identifier\": \"map_role_permissions\",\n                \"type\": \"admin\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"Map User Permissions\",\n                \"identifier\": \"map_user_permissions\",\n                \"type\": \"admin\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Get Paginated List of Customers\",\n                \"identifier\": \"admin_get_paginated_customers\",\n                \"type\": \"admin\"\n            },\n            {\n                \"id\": 8,\n                \"name\": \"Get Paginated List of Admins\",\n                \"identifier\": \"admin_get_paginated_admins\",\n                \"type\": \"admin\"\n            },\n            {\n                \"id\": 9,\n                \"name\": \"Add New Role\",\n                \"identifier\": \"admin_add_role\",\n                \"type\": \"admin\"\n            },\n            {\n                \"id\": 10,\n                \"name\": \"Admin Update User Status\",\n                \"identifier\": \"admin_update_user_status\",\n                \"type\": \"admin\"\n            },\n            {\n                \"id\": 11,\n                \"name\": \"Add New Permission\",\n                \"identifier\": \"admin_add_permission\",\n                \"type\": \"admin\"\n            }\n        ]\n    },\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Fetch User Details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ADMIN_BASE_URL}}/auth/user",
+									"host": [
+										"{{ADMIN_BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"user"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successfully Fetched User",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ADMIN_BASE_URL}}/auth/user",
+											"host": [
+												"{{ADMIN_BASE_URL}}"
+											],
+											"path": [
+												"auth",
+												"user"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 16 Nov 2025 05:17:36 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6InFMSnlrRjlUSXZRQ0lxWEIrWFBYb2c9PSIsInZhbHVlIjoicVpUVm9GalF2bkNWVEIrZjlGSkNTeVpDWmRoV3RiMGJSOFk3UGcyUVllc3BCYXJrR0JVMUwwejBoS2NpL2s0ZXpjU1cvNUNpUWYyZVY3M0lyaW0zVXYwbTh0ZXEydVA0Q0x4VXFib0FLU0MzNndtWTdzMUxUNXdQR212ZDdhVW8iLCJtYWMiOiI1ZDU5NzRhODE3ZDU0MDI4MWJhZjU5M2QyN2ViNDQyOWEyZTE4OWI4ODcyZDA5NjhlNWM2YzY1ODY5MjY3MDAwIiwidGFnIjoiIn0%3D; expires=Sun, 16 Nov 2025 07:17:36 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6InJLZWN6NTdTU2ZRaktGdktuR1E5a2c9PSIsInZhbHVlIjoiWVlxYUxzZU94VFVjcXRiWkVyOVhld09GRTVuRDB1bXpCSTdITktkOXBRSWQvNTBleUxqMWVpOFlVZXZPaW5XWHFhVnBDeHdnV2hMNlpRVENCQlJ5VW5aenBuYXZnb0JKTGtLc21tTXZoM2d1TFpnU0Vva3ExNTl2cWJPMUQ4U0YiLCJtYWMiOiIzNmRiMmYxZDdhNzU3NzkwMGY3OWQ4NDVhZDJiMmU3NzNhNWQ5Njk4Mzc0MjZmODNjODBkODc4ZGEzNjIyYWFmIiwidGFnIjoiIn0%3D; expires=Sun, 16 Nov 2025 07:17:36 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"User profile retrieved successfully.\",\n    \"data\": {\n        \"id\": 1,\n        \"first_name\": \"Admin\",\n        \"last_name\": \"Admin\",\n        \"email\": \"admin@admin.com\",\n        \"phone\": \"08011111111\",\n        \"permissions\": [\n            {\n                \"id\": 2,\n                \"name\": \"Admin Dashboard Access\",\n                \"identifier\": \"access_admin_dashboard\",\n                \"type\": \"admin\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Add Admin\",\n                \"identifier\": \"add_admin\",\n                \"type\": \"admin\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Update App Settings\",\n                \"identifier\": \"admin_update_app_settings\",\n                \"type\": \"admin\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Map Role Permissions\",\n                \"identifier\": \"map_role_permissions\",\n                \"type\": \"admin\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"Map User Permissions\",\n                \"identifier\": \"map_user_permissions\",\n                \"type\": \"admin\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Get Paginated List of Customers\",\n                \"identifier\": \"admin_get_paginated_customers\",\n                \"type\": \"admin\"\n            },\n            {\n                \"id\": 8,\n                \"name\": \"Get Paginated List of Admins\",\n                \"identifier\": \"admin_get_paginated_admins\",\n                \"type\": \"admin\"\n            },\n            {\n                \"id\": 9,\n                \"name\": \"Add New Role\",\n                \"identifier\": \"admin_add_role\",\n                \"type\": \"admin\"\n            },\n            {\n                \"id\": 10,\n                \"name\": \"Admin Update User Status\",\n                \"identifier\": \"admin_update_user_status\",\n                \"type\": \"admin\"\n            },\n            {\n                \"id\": 11,\n                \"name\": \"Add New Permission\",\n                \"identifier\": \"admin_add_permission\",\n                \"type\": \"admin\"\n            }\n        ]\n    },\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ADMIN_BASE_URL}}/auth/logout",
+									"host": [
+										"{{ADMIN_BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successfully Logged out",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ADMIN_BASE_URL}}/auth/logout",
+											"host": [
+												"{{ADMIN_BASE_URL}}"
+											],
+											"path": [
+												"auth",
+												"logout"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 16 Nov 2025 05:30:05 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6IkhhSlZTamRsbERvUHF0R2gzRCtQcHc9PSIsInZhbHVlIjoiL2NHSm1SckFkUlhINXJJVEg2bGhhNmFZaUxsNHlJMVdxZnpJaXZpQlZRWmQ1bVh3cGRpN0NLVzJaRzljOGFnZzRWcERsc2JaWi9SUjhNNkEvYlFWZGxNYXI5YkIyU0ZBWkd3K3dOTGdwMWRDRnNTQnJmemhwb1AyZDgzbmw5QjgiLCJtYWMiOiIxNGNjYmU1NGZiNjE2YTAwYzE1Mzg5NDc2OWVlNWIwYjlhM2E3Y2NhZTIyZTU1YzVhZjU0Zjk1ZWNiMjRlZmVlIiwidGFnIjoiIn0%3D; expires=Sun, 16 Nov 2025 07:30:05 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6Im5NcndPWkt0SVpjWm5taENmMDNCQ3c9PSIsInZhbHVlIjoiS1lkWFNhWFZiTHk2RG5Oc0JWNXJ2eXBHUXlJSHBtZGtkMWlmd0VuTGZ2U1plMDdQdGxMWkdjUWcwR01iNXlmRS9hMjluV3FPZHhvR2tnSVdMa0x3eUk1Zmg1MG90OHVEUUM4QzI0ZEJwczBXa1BmTit1ZjV3d21CNU9uV2laZE8iLCJtYWMiOiI1ZDBkOTU3MWJkODk4NWVhNDM0MzNiYmNlNmNjNTQxYjhiNjUyODY3NjE3YWU5YzljZWEyNzQ4NTgzOTczYjFkIiwidGFnIjoiIn0%3D; expires=Sun, 16 Nov 2025 07:30:05 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"User logged out successfully.\",\n    \"data\": null,\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Change Password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"old\": \">SCO1HPH8Lb&\",\n    \"new\": \"High123@\",\n    \"new_confirmation\": \"High123@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ADMIN_BASE_URL}}/password/change",
+									"host": [
+										"{{ADMIN_BASE_URL}}"
+									],
+									"path": [
+										"password",
+										"change"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successfully Changed Password",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"old\": \">SCO1HPH8Lb&\",\n    \"new\": \"High123@\",\n    \"new_confirmation\": \"High123@\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ADMIN_BASE_URL}}/password/change",
+											"host": [
+												"{{ADMIN_BASE_URL}}"
+											],
+											"path": [
+												"password",
+												"change"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 16 Nov 2025 05:27:11 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6IkZObURzaFlObzZRSTZYdG5TK1NLTVE9PSIsInZhbHVlIjoiQlV4WTJSSmE4S3FNZlFWQkRJSDhxcHNLT3RwVjlYMlhyV0kvbDluMGRSN1MwdnFCZWgxY2JSSk5OZzBPeFZscEJjT0lqTU1yMWRzaWUxYWVsSUI5MkhXL2pOL3ROV0Y4OFU2RytNcUtscGxibkxQVEhVdlJPeEUrWklCR0xaZFgiLCJtYWMiOiJhZmU2NzliNzlhNTYyODNkN2QwN2FjNWZmNTc2NDY4YTVjMGQzNTkzNzI4MmJmZWQ1MWNkODkyNzJjZDE2MzlhIiwidGFnIjoiIn0%3D; expires=Sun, 16 Nov 2025 07:27:11 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6ImVTNGNKTDJEMlFGNEZjblAzQUMwTmc9PSIsInZhbHVlIjoiOTVWNWNiNm9sOG9yQ3lxaTBWcVZJVmozTm13S3poSFFON2VPZnNMSjVmK0haU2VMejh0Znd6Rk1mSXkwU08vdWRmVThwSkdXbmZEaWNGd2hEek5BTXFUVjFzS1dHOVNacVYyWnluaEp3eTFwNTYyWG53SVhWbldrUkVhOWw4c1oiLCJtYWMiOiIzZjFkNDgzZWE1N2MxZDU0YzdjYmRiYTk0YjExODdlOGQyMDhjNTU4MWViOTU5N2M2ZDNhYzc0NjFkN2QwMDA5IiwidGFnIjoiIn0%3D; expires=Sun, 16 Nov 2025 07:27:11 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Password updated successfully.\",\n    \"data\": null,\n    \"errors\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "App Settings",
+					"item": [
+						{
+							"name": "Update Settings",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Role",
+					"item": [
+						{
+							"name": "Add Role",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Manager\",\n    \"identifier\": \"admin-manager\",\n    \"type\": \"admin\",\n    \"description\": \"Manages admin operations\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ADMIN_BASE_URL}}/role/add",
+									"host": [
+										"{{ADMIN_BASE_URL}}"
+									],
+									"path": [
+										"role",
+										"add"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successfully Added Role",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Manager\",\n    \"identifier\": \"admin-manager\",\n    \"type\": \"admin\",\n    \"description\": \"Manages admin operations\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ADMIN_BASE_URL}}/role/add",
+											"host": [
+												"{{ADMIN_BASE_URL}}"
+											],
+											"path": [
+												"role",
+												"add"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 16 Nov 2025 05:34:45 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6IkFCaHVRRm4zVW1Zdm1uamhNQTNQbnc9PSIsInZhbHVlIjoiYUY2REhFenpINWpYTm5lbXNmU1M3YjF0R3ZDejY0cEZ0QmpqYXprQ2F2c3B5c3pZVjdPYTFLR1RaY294dDVkWmt5dmhkUkNZalpZNnNZYmRjdXFlYmtIQVFYNEpOTjhyOFo2TURiOUswQkp6TTIzRXd1U1BZdGdmWVcxa09vZy8iLCJtYWMiOiIzYzYxOWZlMmE3MGFmZWNlZmMwMTZkMWNlMGJiODZiMGQyNTFhMWFkYTMxYjkwYjY5Y2IxOTkyMTI2MzhlMTY4IiwidGFnIjoiIn0%3D; expires=Sun, 16 Nov 2025 07:34:45 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6Ind3TmE3MzB2NU9uZWUzNWRvRXVEQmc9PSIsInZhbHVlIjoiRXpGOWhoL1RpYmVaVnVBUW55OUJiY1ZNZTNqY0NMWGhEY0hwQXROeDVzalV0QWN0ZE1oUVJJS08wV0xVaUJPN3o4UVV6akZmOERvb0oxMHdPd0p0SHhsQUE4TmtuNmpTditSNTFDZjVkRkY4aytORWZYRkMxZEtMS052WWtZS0siLCJtYWMiOiI2NDA0MTUxYTU3OTRhYTJiNDQ3OTlmZjJiYTlkMTc4ODc2OGI1MWNmYmZmYjA5N2FjOGI4Nzk5ZTA1MDBjODcxIiwidGFnIjoiIn0%3D; expires=Sun, 16 Nov 2025 07:34:45 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Role added successfully.\",\n    \"data\": null,\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Role",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Managerx\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ADMIN_BASE_URL}}/role/update/4",
+									"host": [
+										"{{ADMIN_BASE_URL}}"
+									],
+									"path": [
+										"role",
+										"update",
+										"4"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful Role Update",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Managerx\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ADMIN_BASE_URL}}/role/update/4",
+											"host": [
+												"{{ADMIN_BASE_URL}}"
+											],
+											"path": [
+												"role",
+												"update",
+												"4"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 16 Nov 2025 16:28:16 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6IkRuK0xrazMyUlI1VG04NjI2N09GTGc9PSIsInZhbHVlIjoiR05tT211STRXQldIc1ZYaTFaeGVyQWFDV05mM2Y1cTc1d1VydTkrQjRERm1kczJqVzhwZ0RtTnM5Q0h6UnFXbWRGOERHWGpHZzJORFhHT05qTzloRG9TekFvZURCVlNjeDEyUnNIcEpjWnZUYS96b1hIM0lPallIdjdXK1VGM2UiLCJtYWMiOiIzODZjNDljZDk0M2Q4OTQ5ZjhhZWE1ZjQ3MmQ2NDg2YWJmMzYxNmI1ODc4ZDczZjcyN2I4Y2Y5ZWQ4ZWZjZjkzIiwidGFnIjoiIn0%3D; expires=Sun, 16 Nov 2025 18:28:16 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6InArSWNVUjdIcFhtMFdubGtkVzYrU1E9PSIsInZhbHVlIjoiNTYxZWcxQ1ZHU0tlU0lrcGk3cjYwYUlQQ25lRTE3WU4vcVVFM2tSejZkbStsQVltcExwQXdtLzYwd0JyZVAzcTlXMmRMRWg4UWE0R0tENjRabVNyc1U2UWJ0cVFwbTlKdVAxY1hPRHYyd1l3RE5rUFJPT3VXdHRFYUlyNE5TYlAiLCJtYWMiOiIxOGVlNjdjYjEwOTg0NDBhOWJhNDIzMDlmOWI1YWNmNjJlNmUyODI2MjdhMmRlNGZhOTU0MDZiZjMwZDM0ZTIxIiwidGFnIjoiIn0%3D; expires=Sun, 16 Nov 2025 18:28:16 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Role updated successfully.\",\n    \"data\": null,\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Roles",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ADMIN_BASE_URL}}/role/get",
+									"host": [
+										"{{ADMIN_BASE_URL}}"
+									],
+									"path": [
+										"role",
+										"get"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successfully Fetched Roles",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ADMIN_BASE_URL}}/role/get",
+											"host": [
+												"{{ADMIN_BASE_URL}}"
+											],
+											"path": [
+												"role",
+												"get"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 17 Nov 2025 03:35:03 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6IlpiZ3JEQk8reVdjNWpNTStxRmcwdHc9PSIsInZhbHVlIjoiMllPMVd5V2lwanJjZDNDYVVZY1lycjB5RXZDYlk4VStzTHRnR1VtT2toZHVHTFd4U1lJcS9VT002S014SjRNRS8vU1BZT0tqQS9qakl3SnRFaGRwZWFsUXJ2S1RvdWU4ZHJVcEtiV1JoQWFIM20zSVNNKzlpL3BkM0dmU05JdGIiLCJtYWMiOiJkNTQ1MjRlYzIyM2MxMjQwYThmNDU0ODZkYWY3NDM3YjYzODg0NDFkOGYzMjk1ZTZiOTUyYmEzMzVjY2Q3N2JiIiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 05:35:03 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6ImovYTFzRS9weHpGSk9PaEcxa213N1E9PSIsInZhbHVlIjoiQmtLZi83ZEEraE9LUDQvUVBkVjd2b3dORERFQjdHZDNKc1l2S0tyRzFkcmt3UUZYdW5nQlNVVTNxam9YV1ZieG92YUFtZ2FkV0JFekJQKzFtU3lpU0lCUnh3cmdHOXpqT3loRU1nSmRGeFZPRVpBNmU1bUIxa0VUVGdNMXZ2UDgiLCJtYWMiOiI4MjNiOTE4NTNhZWQ0NDNiZmZmZTA4ZmVlZmQ5ZjliZjA0N2VkMDUxMmE5ZWQzYmQyOGQ0ODI1NjUzNDk2YzJlIiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 05:35:03 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Roles fetched successfully.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Admin\",\n            \"identifier\": \"admin\",\n            \"type\": \"admin\",\n            \"permissions\": [\n                {\n                    \"id\": 2,\n                    \"name\": \"Admin Dashboard Access\",\n                    \"identifier\": \"access_admin_dashboard\",\n                    \"type\": \"admin\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Customer\",\n            \"identifier\": \"customer\",\n            \"type\": \"customer\",\n            \"permissions\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Customer Dashboard Access\",\n                    \"identifier\": \"access_customer_dashboard\",\n                    \"type\": \"customer\"\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Super Admin\",\n            \"identifier\": \"super_admin\",\n            \"type\": \"admin\",\n            \"permissions\": [\n                {\n                    \"id\": 2,\n                    \"name\": \"Admin Dashboard Access\",\n                    \"identifier\": \"access_admin_dashboard\",\n                    \"type\": \"admin\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Add Admin\",\n                    \"identifier\": \"add_admin\",\n                    \"type\": \"admin\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"Update App Settings\",\n                    \"identifier\": \"admin_update_app_settings\",\n                    \"type\": \"admin\"\n                },\n                {\n                    \"id\": 5,\n                    \"name\": \"Map Role Permissions\",\n                    \"identifier\": \"map_role_permissions\",\n                    \"type\": \"admin\"\n                },\n                {\n                    \"id\": 6,\n                    \"name\": \"Map User Permissions\",\n                    \"identifier\": \"map_user_permissions\",\n                    \"type\": \"admin\"\n                },\n                {\n                    \"id\": 7,\n                    \"name\": \"Get Paginated List of Customers\",\n                    \"identifier\": \"admin_get_paginated_customers\",\n                    \"type\": \"admin\"\n                },\n                {\n                    \"id\": 8,\n                    \"name\": \"Get Paginated List of Admins\",\n                    \"identifier\": \"admin_get_paginated_admins\",\n                    \"type\": \"admin\"\n                },\n                {\n                    \"id\": 9,\n                    \"name\": \"Add New Role\",\n                    \"identifier\": \"admin_add_role\",\n                    \"type\": \"admin\"\n                },\n                {\n                    \"id\": 10,\n                    \"name\": \"Admin Update User Status\",\n                    \"identifier\": \"admin_update_user_status\",\n                    \"type\": \"admin\"\n                },\n                {\n                    \"id\": 11,\n                    \"name\": \"Add New Permission\",\n                    \"identifier\": \"admin_add_permission\",\n                    \"type\": \"admin\"\n                }\n            ]\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Managerx\",\n            \"identifier\": \"admin-manager\",\n            \"type\": \"admin\",\n            \"permissions\": []\n        }\n    ],\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Map Permission",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"role\": 3,\n    \"permissions\": [2,3,4,5,6,7,8,9,10,11,12,13,14]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ADMIN_BASE_URL}}/role/permission",
+									"host": [
+										"{{ADMIN_BASE_URL}}"
+									],
+									"path": [
+										"role",
+										"permission"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"role\": 1,\n    \"permissions\": [2,12]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ADMIN_BASE_URL}}/role/permission",
+											"host": [
+												"{{ADMIN_BASE_URL}}"
+											],
+											"path": [
+												"role",
+												"permission"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 17 Nov 2025 04:34:36 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6IjZPUVl5dG5lTHVtR1FpR3ZGeW1wMmc9PSIsInZhbHVlIjoiR0VqQWVVUUZYUnp6b3d4MkdDQmE4YXlNTFdzUzBIMndxYzJDZWdiVVJETjN3eFRGd0tNcmZOcVVOY1JpTmtUeU4rWVpHZWEzWmJyWk9HUFJlNVh3NHQ3K1pNbnZhNllCVjlMVnl6Nm56NGpqUmF6U2ZDOUhaQlFBWG9CVWJlMFAiLCJtYWMiOiI2ODY1Y2I4OTcxM2RhMDI4Y2MwM2FjYWYzNDVkYjAxNjdjZTZkMWE0ZTg5YzYwMGY1MDI0YTlmMmI1NDg5ZGQ3IiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 06:34:36 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6Ii9vanZCdkluRCs3TW81eHFxbXp1Z0E9PSIsInZhbHVlIjoidDIwaDMxYldVQm0zbk1zUjE3UUFtSE93ekhEU05LUmU4R21iNExMSEYwR0FkaW02ejRCSXA2Zk9odi9vVW5xMTByUmhIVmxPNjlPSzlmWCszamJTSGYyYi9oOWJ5Nm1zRUlicGwzWmd6WDhaMG9reUI2L0p3MktIWjd5WE5FOTIiLCJtYWMiOiJmZTMwNTQwNmJlYjRlMzRhMGYwYWNmMmU1YzEyMGE2YWYzY2VhNDc4ZjVjZmY5ZGE2NTI0OTA2MzUxMzcyYmQ1IiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 06:34:36 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Roles mapped successfully.\",\n    \"data\": null,\n    \"errors\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Permission",
+					"item": [
+						{
+							"name": "Add Permission",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Change Admin Role\",\n    \"identifier\": \"admin_change_admin_role\",\n    \"type\": \"admin\",\n    \"description\": \"Allows admin to change admin role\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ADMIN_BASE_URL}}/permission/add",
+									"host": [
+										"{{ADMIN_BASE_URL}}"
+									],
+									"path": [
+										"permission",
+										"add"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Manage App Settings\",\n    \"identifier\": \"admin-manage-app-settings\",\n    \"type\": \"admin\",\n    \"description\": \"Manages settings for the app in general\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ADMIN_BASE_URL}}/permission/add",
+											"host": [
+												"{{ADMIN_BASE_URL}}"
+											],
+											"path": [
+												"permission",
+												"add"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 17 Nov 2025 03:40:02 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6InZZQ0s2Tkw2YWxsa29nK29UWlRRL2c9PSIsInZhbHVlIjoiWGpDaXJValNLMmJvUkFiZm14dGJDamltTnhodFV0NVRPUmkwbWl3WHVxaG5UcFdBZEJZWnBkS2ZTZ2hQWnJYTUtoVEFYb3BXK2NlN21URWtXLys0NThmQW5uSG0vNnhjakl1ZWMvbUhleGhLbE9pUWZYa0c5V2lqT1pkZnBFaHgiLCJtYWMiOiJjMmJjZWViNTYwM2Y3NjA1YmZiMTRlMTBhMjBjNjhjZjRhOTUzMjdiOTRlZWE4YjdlZTM1NjZjN2VkYTc4YzlkIiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 05:40:02 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6ImJwcks2Q0dzc2x4STdDMElqdDIwSFE9PSIsInZhbHVlIjoiaTVyVWFMd05USHZaLzhCNmZPU05UQXRQbGJvTzl5NmcvZ1hEbENZM3NLQTl5UE92azhpQ2tDN1ZrTUdOd0NRZFV2RXZ4L0NQZHhmNWhya0ZrZ0VENUNBcEs1eUhHMHhic0VrTUlURWVNWnU1RzNlT1JOaWNUMFZ1RjFJNEZlMWIiLCJtYWMiOiJmNjU5NmVjYzgwNTAxMDhjZDBiMDE2ZmQ5ZDllYTk0Y2FmNmEyNzMyNGU5NWI1N2E0ZTdlNWFjYWE2MGZkNzJkIiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 05:40:02 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Permission added successfully.\",\n    \"data\": null,\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Permission",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Manage App Setting\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ADMIN_BASE_URL}}/permission/update/12",
+									"host": [
+										"{{ADMIN_BASE_URL}}"
+									],
+									"path": [
+										"permission",
+										"update",
+										"12"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Manage App Setting\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ADMIN_BASE_URL}}/permission/update/12",
+											"host": [
+												"{{ADMIN_BASE_URL}}"
+											],
+											"path": [
+												"permission",
+												"update",
+												"12"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 17 Nov 2025 03:57:35 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6IkNoWTZiSjZpWG5MaDlhK0RrRmYyWlE9PSIsInZhbHVlIjoiR0tReTNidE1ib3Q3OXNLYlZDUE5ZdFk1ajdUeStqTklYZ21wUnJGMjY3dlFSR2RULzkxT1c2Z3VWbm9OVlN4NXZCUGhoZGZCa2UvQ2c2RUVrNWlSamZSb0J4aGo5dnFSV21jWWNPU3NWMkdxd0w2bFVFNWhVTHZtSml5Y2lVZzMiLCJtYWMiOiIwNWMxZmUwMzM1MTE4Y2VhMGM3ODJkMzExZGIzNmRhYmRiMTY1NDcyMThjNTA4Y2VhNzIzNWEwZWNjN2VlNzk0IiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 05:57:35 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6IldPQ3QyVTVodUdFaE5LeGRLTVliTVE9PSIsInZhbHVlIjoiQmRpT1ZlUnhrY2s0dGpkZUl0S0xSVU0zR1djRTNVUW9qZnpiZWc3eUlaaWNzTkxGVlhkYnVYN0RYZmQ2anc5MjhFVitIc3krdnpaSENqMDl6TDBudjlOcWt3a2JrcTkxQTdwYnFzSkxXMXJ5R1J3bHVMNmd6SlZ1eHY0UzVXSW0iLCJtYWMiOiJjY2FkNTM0MjQ2YWUxMTBkZjMxNjkyMDU4YWY3NTk4N2RhZjJlODUzNzY2MzVmMzM2NjFlM2UwZGEyMTRhM2Y2IiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 05:57:35 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Permission updated successfully.\",\n    \"data\": null,\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Fetch Permissions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ADMIN_BASE_URL}}/permission/get",
+									"host": [
+										"{{ADMIN_BASE_URL}}"
+									],
+									"path": [
+										"permission",
+										"get"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ADMIN_BASE_URL}}/permission/get",
+											"host": [
+												"{{ADMIN_BASE_URL}}"
+											],
+											"path": [
+												"permission",
+												"get"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 17 Nov 2025 03:50:31 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6InhMbFM1cko0eHNKQmYzYXBmRHNKc0E9PSIsInZhbHVlIjoiQjk3NGhzYm16YUxPTnFCM3lWcDhEcVlaVEpYZ2U4WTl2L0xtUHFYY21SeW9IdVA2ZGZwMWdrNzBYbEZYR1J6L3UzRTB1UmQ5SHYwOGx2NGRpeHAzeXpBNHkwYlBwVlNWOTlxZWZGR1g4MnhXVUxPakw2enJqbTl2RlZURENaeEkiLCJtYWMiOiIyYmEzODc5YmRlNWYzNTUzNzUyZTBhZDFkNjg3YWRhMjVmZWQ0NGQxNDUyMGY3YjI1NGY4ZDFiY2NkMDM4OWI2IiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 05:50:31 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6IlBqSFA2aENOTmQraEhjcml0UUdkdWc9PSIsInZhbHVlIjoia1VDd0VqNHc1SUxwRmJCVytORkpXRzFyMWpqU2V5VWZEeEJRakNkcXgwbHlLdk1FaURyOERWVnBCMXg2cmRDWWovK3ErTGw5SFZqVEJ1K0ZQTUhpbmdHRVlBdGRSZTN5ejB6L0sxRkxoTERVTEZ6ZXNzeS9NTTR6QXhnN20wOUwiLCJtYWMiOiIzMGIwZTRiOTNjMWZkMTVmZTQ0YTUyMWJiNmI2MWUyNTc0OTNmOGNiOTgzMzdmZTY4M2ExNjE1YmZmMDk4NGExIiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 05:50:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Permissions fetched successfully.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Customer Dashboard Access\",\n            \"identifier\": \"access_customer_dashboard\",\n            \"type\": \"customer\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Admin Dashboard Access\",\n            \"identifier\": \"access_admin_dashboard\",\n            \"type\": \"admin\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Add Admin\",\n            \"identifier\": \"add_admin\",\n            \"type\": \"admin\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Update App Settings\",\n            \"identifier\": \"admin_update_app_settings\",\n            \"type\": \"admin\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Map Role Permissions\",\n            \"identifier\": \"map_role_permissions\",\n            \"type\": \"admin\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Map User Permissions\",\n            \"identifier\": \"map_user_permissions\",\n            \"type\": \"admin\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Get Paginated List of Customers\",\n            \"identifier\": \"admin_get_paginated_customers\",\n            \"type\": \"admin\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Get Paginated List of Admins\",\n            \"identifier\": \"admin_get_paginated_admins\",\n            \"type\": \"admin\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Add New Role\",\n            \"identifier\": \"admin_add_role\",\n            \"type\": \"admin\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Admin Update User Status\",\n            \"identifier\": \"admin_update_user_status\",\n            \"type\": \"admin\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Add New Permission\",\n            \"identifier\": \"admin_add_permission\",\n            \"type\": \"admin\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"Manage App Settings\",\n            \"identifier\": \"admin-manage-app-settings\",\n            \"type\": \"admin\"\n        }\n    ],\n    \"errors\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Change Role",
+							"item": [
+								{
+									"name": "Customer",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"user\": 5,\n    \"role\": 2\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ADMIN_BASE_URL}}/users/change-role/customer",
+											"host": [
+												"{{ADMIN_BASE_URL}}"
+											],
+											"path": [
+												"users",
+												"change-role",
+												"customer"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Successful",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"user\": 5,\n    \"role\": 2\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{ADMIN_BASE_URL}}/users/change-role/customer",
+													"host": [
+														"{{ADMIN_BASE_URL}}"
+													],
+													"path": [
+														"users",
+														"change-role",
+														"customer"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": null,
+											"header": [
+												{
+													"key": "Server",
+													"value": "nginx/1.29.0"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.3.27"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 17 Nov 2025 06:28:15 GMT"
+												},
+												{
+													"key": "Set-Cookie",
+													"value": "XSRF-TOKEN=eyJpdiI6IkJsVjliMDE5TXVlcmxsc01CWjBlWUE9PSIsInZhbHVlIjoiNXJzcTNJYkxuS2JBb2pqMXJSQ0ZnVFBMWFZ2YmlSZXRtY0RYSDdnM2xuUk5yVDBBc0hBanZ2a21uV2lVZ0JpdWw0a2MxTkNtdmNTTjNOKzIzVS9wUFJacHFvUW9OTWtwNkZrWk1Hby9yN3RDaHk0aEtyNHdCYlFBWFFSSFdLUGIiLCJtYWMiOiJkOWFkNmNhNDY0NDU2MzY1YTg1MDE2NjFlZjQ5M2Y0Y2UwNmNjNzE3NjVjZjg2ZTViOGQ3NzgyMTA2NThhYWVlIiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 08:28:15 GMT; Max-Age=7200; path=/; samesite=lax"
+												},
+												{
+													"key": "Set-Cookie",
+													"value": "laravel-project-biolerplate-session=eyJpdiI6IkxDNm4yOERUZmVtc0tuZU9FQTBrZFE9PSIsInZhbHVlIjoiYXNFVmZZU0ZES2ZDVGk1Z1VZY042RU16R1NzQVZudFFzWWh3UlpMMUp0Ym9UeWRaV2RkanAzZWxRMGlrQTRRbGs5QldtaStPenFtSFMvZ1N2Zm1YUG9NM0JBRVNKVm1xeVdlYkZ2MHoycndJM1htQWphK0lYdmtqeE5Yam1BbjgiLCJtYWMiOiI2NmM3YjRjMjJkOWU2MWZjNmQwMjJhODI5MzNmYWUzMzEzZWU5NWNlNWNlZDcxODllNWU0ODNhNjhkZTY5NmU4IiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 08:28:15 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Customer role updated successfully.\",\n    \"data\": null,\n    \"errors\": null\n}"
+										}
+									]
+								},
+								{
+									"name": "Admin",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"user\": 6,\n    \"role\": 4\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ADMIN_BASE_URL}}/users/change-role/admin",
+											"host": [
+												"{{ADMIN_BASE_URL}}"
+											],
+											"path": [
+												"users",
+												"change-role",
+												"admin"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Successful",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"user\": 6,\n    \"role\": 4\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{ADMIN_BASE_URL}}/users/change-role/admin",
+													"host": [
+														"{{ADMIN_BASE_URL}}"
+													],
+													"path": [
+														"users",
+														"change-role",
+														"admin"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": null,
+											"header": [
+												{
+													"key": "Server",
+													"value": "nginx/1.29.0"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.3.27"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 17 Nov 2025 06:25:45 GMT"
+												},
+												{
+													"key": "Set-Cookie",
+													"value": "XSRF-TOKEN=eyJpdiI6Im4vMTlZcmNyZ3NCTE9SZzhPbkUrOGc9PSIsInZhbHVlIjoid2FYWjVUOTdxNGtwTkl1eU5KVDFJRUg5Z0ovRFhzTTR0aGNVb0VWaUxVeDdLVnNtRUNxTC9PTGxLRGdZOWxRbkcyT2RNKzFLTlFNUkRsbmk1ZE5Ib1ZoOHBpNXVjd01UcjFzTkpDa2Uwand4NEM4d1dJWHRaRk9FWnh3SVkxU2IiLCJtYWMiOiIwYjdlY2JkMzkzZWMwZDdkYWRmODE4M2RjZWFmYTMxMTU0NDIzMjY0NWU4ZmFjMzczNWZkMzU4NTE5MGFjZmVjIiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 08:25:45 GMT; Max-Age=7200; path=/; samesite=lax"
+												},
+												{
+													"key": "Set-Cookie",
+													"value": "laravel-project-biolerplate-session=eyJpdiI6Iktmb25RVFVhN1RTSmRBRHFGM1loZ0E9PSIsInZhbHVlIjoiMmxXT3FxbXVmdHJlTW1uVHFYOFA5MHF3eDdQRHVibldOeXhHTWVES2p1L0ZtcTFWNDMzVmJPYlN6WWxnZkdqTE52WVhTTkp1eS9HajFjWU4wVVVFdnZGVDBZZThWT0tzeXo3dFBVdnEzb3RrQ1N3TWFCZDUreDlmSE1kWi9iUGIiLCJtYWMiOiJmMzlmYTVhMDA2OTA5MTNhNGY4Mzg4NjM2YzlkNDU5MjQyYjExNDRiYzkzZjIxYTUxMWRkYzA1NTg3ZWYxYjQ1IiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 08:25:45 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Admin role updated successfully.\",\n    \"data\": null,\n    \"errors\": null\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Fetch Customers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ADMIN_BASE_URL}}/users/customer?page=1",
+									"host": [
+										"{{ADMIN_BASE_URL}}"
+									],
+									"path": [
+										"users",
+										"customer"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ADMIN_BASE_URL}}/users/customer?page=1",
+											"host": [
+												"{{ADMIN_BASE_URL}}"
+											],
+											"path": [
+												"users",
+												"customer"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 17 Nov 2025 04:27:10 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6InlhQk1RVHpwRHZuNVJPRG1mcUx2cmc9PSIsInZhbHVlIjoiU1JQUXJsWFdzR21KT3NsdHhncjg2NjdGQU54L3hSS2x4K0JVb015b1NlWmRPZ0FGdEdYSnVvMXREYzVVUUlqaTNDNlZNNHpaR0VtTG5MaXFzMU82V2c5T2NBelQ3Z2JrWjBtQklPelVsbU5QWGpvTSt5MkhGLy9FSXljR0dpd2UiLCJtYWMiOiJkYjM5NDE2MmRiOTBjNTFmMWQxYzA2M2NkMTA0NzU3MDc1OGVlZjgxOWY4OGE2M2VlMGRiYmZkMTEyZTE3YmE4IiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 06:27:10 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6Ikw5VHlWYkU1S21DNkk0ZHBRMUxoZ3c9PSIsInZhbHVlIjoiNDlXVlQ0WUFuQ1lqSzBzUDBGakZjVG96VWhSZXpMQjNCeVVDbTVWRktsOWNTUmJrV2lMSDlYcFpZT3N0YThLZzk5WnI4V0NyYmVDLzE2c3FZcGp3cW1YOGt1Sll1dEc3SmppK2xQbEkzMTVnLzE1SEFENmdRVWZZSmd4Q0duTDAiLCJtYWMiOiJlNWYwNzUxOGViYjE0MzA1NjEyODE1MDM0NTkyNDk0YmI5MTQ1YmZiYzJjOTc1NzlmNzk5MDE5NTE3M2QwNDk2IiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 06:27:10 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Fetched users successfully.\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 5,\n                \"first_name\": \"abdul\",\n                \"last_name\": \"kareem\",\n                \"email\": \"abdul.kareem1234@gmail.com\",\n                \"phone\": \"08012121216\"\n            },\n            {\n                \"id\": 4,\n                \"first_name\": \"abdul\",\n                \"last_name\": \"kareem\",\n                \"email\": \"abdul.kareem123@gmail.com\",\n                \"phone\": \"08012121215\"\n            }\n        ],\n        \"pagination\": {\n            \"total\": 4,\n            \"per_page\": 2,\n            \"current_page\": 1,\n            \"last_page\": 2,\n            \"from\": 1,\n            \"to\": 2\n        }\n    },\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Fetch Admins",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ADMIN_BASE_URL}}/users/admin?page=1",
+									"host": [
+										"{{ADMIN_BASE_URL}}"
+									],
+									"path": [
+										"users",
+										"admin"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ADMIN_BASE_URL}}/users/admin?page=1",
+											"host": [
+												"{{ADMIN_BASE_URL}}"
+											],
+											"path": [
+												"users",
+												"admin"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 17 Nov 2025 04:28:06 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6IllReTZKSmNWbFQxZDRyOHhBWGNaT3c9PSIsInZhbHVlIjoiOGpjRmFaZGhpMVNoZXQ4Z0UvNFdTUkFnb3R3QWtHMjk2QllCKzBLZXBoZGFOeXBHeDNZQk16S0w5UStueHNzbjdENzZnODVycitwS050MUo4c1NBT1VXZEZGcEJQckt5Q3pTVUZWeDBBbnRtVlF2c2wrMWZZZTlCb3lRbk1ObjkiLCJtYWMiOiJhMzc4ODVjNjk4YTY1ZmYyZTdlM2ZlNjQxZjY3Y2UyNDRkMjNkMTIwYmIyODQyNTgzZWUwZjcyZjg1YWNkNzBjIiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 06:28:06 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6ImpWeFVXT2tNRGt0SnVybXJwLzhVSlE9PSIsInZhbHVlIjoiNG40Uzk5Y2tKZmpwQ091V1QrRFkweEE1cHp1YlFLdnUxQnlOTHYxWUlvekJidTRLU1RoVUtuM2xBL2VvK1J2YlJ2MkRUOGdybkljU2pPT3ZBTGFIUmFCTm5lUUVhdjN5ZWpyMFhvckdDRzBLSlc2SlZMU2RqTWg5Z1BLUGdzWjYiLCJtYWMiOiJiZWI2MzE3MTVhMmIwNjg3NWU4ZDQ2Mjc3OTE0MGMzMjE4Nzc4MGY3NGRjMjMzZGM0MDZkZDdjZDVlYTNkMDBjIiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 06:28:06 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Fetched users successfully.\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 6,\n                \"first_name\": \"prosper\",\n                \"last_name\": \"faith\",\n                \"email\": \"prosper.faith@gmail.com\",\n                \"phone\": \"08099999999\"\n            },\n            {\n                \"id\": 1,\n                \"first_name\": \"Admin\",\n                \"last_name\": \"Admin\",\n                \"email\": \"admin@admin.com\",\n                \"phone\": \"08011111111\"\n            }\n        ],\n        \"pagination\": {\n            \"total\": 2,\n            \"per_page\": 20,\n            \"current_page\": 1,\n            \"last_page\": 1,\n            \"from\": 1,\n            \"to\": 2\n        }\n    },\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Map Permission",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": 6,\n    \"permissions\": [7]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ADMIN_BASE_URL}}/users/permission",
+									"host": [
+										"{{ADMIN_BASE_URL}}"
+									],
+									"path": [
+										"users",
+										"permission"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"user\": 6,\n    \"permissions\": [7]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ADMIN_BASE_URL}}/users/permission",
+											"host": [
+												"{{ADMIN_BASE_URL}}"
+											],
+											"path": [
+												"users",
+												"permission"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.29.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.27"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 17 Nov 2025 04:40:34 GMT"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "XSRF-TOKEN=eyJpdiI6IkllQnZXbmduV2t6RHFuMmltd2JkT0E9PSIsInZhbHVlIjoiQnpaWHZHekpFZEZXT1gzWmVOdFlOSmlFNmVtc0RvYTFUOUNSRGpwN2thM0FSQzQ5NnBCNEJXNkVuY0d1L2VpdDdaU015N3ErN0tmclFGa1JKN1RrVE05aHNHQUg0VjdVOUlzWFNrdEYwcE9odTlsRlVhVVhrYUphdndXaHFQdjUiLCJtYWMiOiI5NDAxOWYxMzhhYjlmNWYzZWUyZmRjYjIyM2U0OWM3NDg1OGEyZmM5ZDM5ODJhODE5NDc1MGVmN2M2ZjBlMzljIiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 06:40:34 GMT; Max-Age=7200; path=/; samesite=lax"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "laravel-project-biolerplate-session=eyJpdiI6Ik1SeDNXRWJSVnJydjczcVJQRklZQ2c9PSIsInZhbHVlIjoiNWF6bDVvSnNCalJXMHlYUHBwdHlzc0gvQ0NlZ21WeWQ2WjZReVYraWtLNFFYNlkvdFlSVGR1eC91a1RNamJIb3FuUW05VTVRclZBVUxlZFN2czNjTS8vVnRmbnhmMWhNR1pvWk9YelhDR01WYWFnT2plMDBlWVFSOGhUSVlYNzciLCJtYWMiOiJkZmQyODAzMDE5OGEwMDJkZWNjYjRjODU5ZmJiZDUyNmMzZGIwYzgzMzQzYTU0Mzg1ZWI1YmYzZWIyZmMwZTYxIiwidGFnIjoiIn0%3D; expires=Mon, 17 Nov 2025 06:40:34 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Roles mapped successfully.\",\n    \"data\": null,\n    \"errors\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Add Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Prosper\",\n    \"last_name\": \"Faith\",\n    \"email\": \"prosper.faith@gmail.com\",\n    \"phone\": \"08099999999\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ADMIN_BASE_URL}}/admin/add",
+							"host": [
+								"{{ADMIN_BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfully Added Admin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"first_name\": \"Prosper\",\n    \"last_name\": \"Faith\",\n    \"email\": \"prosper.faith@gmail.com\",\n    \"phone\": \"08099999999\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ADMIN_BASE_URL}}/admin/add",
+									"host": [
+										"{{ADMIN_BASE_URL}}"
+									],
+									"path": [
+										"admin",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.29.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.27"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Nov 2025 05:23:27 GMT"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "XSRF-TOKEN=eyJpdiI6ImFWVGY0Mnp1WGIwL1kvUVRtVERZcmc9PSIsInZhbHVlIjoiMXJFQmY1cTNibU42YWV5UzJHYWw1cTZEOXN4bW9iMHZ5ZkZnbGxnUDhEalRVTFVtdmFIS3R2aFhkT0cxa1ZYcG1QZzBFZXdadFNSK2IzZFE4VENHK2lmeDZwekJwanNHSmQ4MlFUVGJyY3VobmZmSkxKWWxxdGcvSFFObXJoVHAiLCJtYWMiOiI0Y2ZmN2RiODBmOWQ1ZTExOGJhOTU0YTkzNjEyOTAwYjc5NDEwZjdhOTJmNzAxNzdkNTVhNzdkNzNjYjM2N2Y0IiwidGFnIjoiIn0%3D; expires=Sun, 16 Nov 2025 07:23:27 GMT; Max-Age=7200; path=/; samesite=lax"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "laravel-project-biolerplate-session=eyJpdiI6Imd2YWxNeUQ4clNjVlVXdW81WDRlN0E9PSIsInZhbHVlIjoidnJqNnFmU1crZ0dLRGU4citpNWQzaXFWeCtLQnRvdkxKMlhlclNBU0JQcXZsQUVUczZIY3RNdEZ2aG96djdTc0dvVmVTWDdSd0E2NGZCY1B3NnFJTEpWQmxpUDlIYnlML2FwTWc0UkNnNzZ5cG5mTWVoUVFkc3l6K0hhS1RSeEgiLCJtYWMiOiJiNmJmMjBiMGIyMTI3MTVmMDZhMTc1NTZjNWYxMzBhNTIzZjlmOTUxMmY0ZTI0YmUyNzgxMGYzNTg0MjJjMjM5IiwidGFnIjoiIn0%3D; expires=Sun, 16 Nov 2025 07:23:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"response_code\": 2000,\n    \"message\": \"Admin added successfully.\",\n    \"data\": null,\n    \"errors\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Shared",
+			"item": [
+				{
+					"name": "Setup 2fa",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch CSRF Token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/sanctum/csrf-cookie",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"sanctum",
+								"csrf-cookie"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					"pm.request.headers.add({ key: 'Accept', value: 'application/json' });",
+					"",
+					"let backendUrl = pm.collectionVariables.get(\"BASE_URL\")+`${pm.request.url.getPath()}`;",
+					"const pathSplit = pm.request.url.getPath().split('/');",
+					"",
+					"if(pathSplit[1] == 'web-api') {",
+					"    backendUrl = pm.collectionVariables.get(\"CUSTOMER_BASE_URL\")+`${pm.request.url.getPath()}`",
+					"}else if(pathSplit[1] == 'panel-api') {",
+					"    backendUrl = pm.collectionVariables.get(\"PANEL_BASE_URL\")+`${pm.request.url.getPath()}`",
+					"}",
+					"",
+					"pm.cookies.jar().get(backendUrl, 'XSRF-TOKEN', function (error, xsrf) {",
+					"    if (error) {",
+					"        console.log(\"Error getting cookie:\", error);",
+					"        return;",
+					"    }",
+					"",
+					"    if (xsrf) {",
+					"        xsrf = decodeURIComponent(xsrf); // Laravel encodes it",
+					"        console.log(xsrf);",
+					"        pm.request.headers.add({ key: 'X-XSRF-TOKEN', value: xsrf });",
+					"    } else {",
+					"        console.log(\"No XSRF-TOKEN cookie found for\", backendUrl);",
+					"    }",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": ""
+		},
+		{
+			"key": "CUSTOMER_BASE_URL",
+			"value": ""
+		},
+		{
+			"key": "ADMIN_BASE_URL",
+			"value": ""
+		}
+	]
+}

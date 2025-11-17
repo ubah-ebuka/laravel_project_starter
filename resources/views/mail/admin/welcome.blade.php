@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Verify your Email</title>
+        <title>Welcome</title>
         <style>
             body {
             font-family: Arial, sans-serif;
@@ -48,19 +48,16 @@
     </head>
     <body>
         <div class="container">
-            <h2>Verify Your Email</h2>
+            <h2>Welcome</h2>
             <p>
                 Hi {{ucwords($data['user']->first_name)}}, <br><br>
-                Please confirm your email address by clicking the button below.  
-                This helps us make sure it’s really you.
+                Thank you for registering with us! Welcome to {{config('app.name')}}.
             </p>
-            <a href="{!! $data['verificationUrl'] !!}" class="button">Verify Email</a>
             <p style="margin-top: 25px; font-size: 13px; color: #777;">
-                If the button doesn’t work, copy and paste this link into your browser:<br>
-                <span style="color: #4CAF50;">{!! $data['verificationUrl'] !!}</span>
+                Your temporary password is: <strong> {{ $data['password'] }} </strong> We recommed you change it after your first login.
             </p>
             <div class="footer">
-                If you didn’t create an account, you can safely ignore this email.
+                If you aren't affiliate with {{ config('app.name') }}, you can safely ignore this email.
             </div>
         </div>
     </body>

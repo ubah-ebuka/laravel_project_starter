@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 
 class NotificationService
 {
-    public function sendSms(string $recipient, string $message, User|null $user): void
+    public function sendSms(string $recipient, string $message, User|null $user = null): void
     {
         Notification::create([
             'type'       => 'sms',

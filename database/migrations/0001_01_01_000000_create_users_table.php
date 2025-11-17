@@ -57,6 +57,9 @@ return new class extends Migration
             $table->enum('type',['admin', 'customer'])->index();
             $table->text('description');
             $table->timestamps();
+            $table->index('identifier');
+            $table->index('type');
+            $table->index(['identifier', 'type']);
         });
 
         Schema::create('permissions', function (Blueprint $table) {
@@ -66,6 +69,9 @@ return new class extends Migration
             $table->enum('type',['admin', 'customer'])->index();
             $table->text('description')->nullable();
             $table->timestamps();
+            $table->index('identifier');
+            $table->index('type');
+            $table->index(['identifier', 'type']);
         });
 
         Schema::create('role_permissions', function (Blueprint $table) {

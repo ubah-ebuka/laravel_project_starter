@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middlewares\Customer;
+namespace App\Http\Middlewares\Admin;
 
 use App\Enums\RequestActionEnum;
 use App\Traits\ApiResponse;
@@ -20,8 +20,8 @@ class Authenticate
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $user = Auth::guard('customer')->user();
-        if (!$user || $user->type !== 'customer' || $user->status !== "active") {
+        $user = Auth::guard('admin')->user();
+        if (!$user || $user->type !== 'admin' || $user->status !== "active") {
             return $this->failedResponse('Unauthenticated', 401, RequestActionEnum::NOT_AUTHENTICATED);
         }
 

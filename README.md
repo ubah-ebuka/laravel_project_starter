@@ -21,7 +21,7 @@ This boilerplate removes repetitive setup work and helps you start building your
 - Phone verification (OTP)  
 - Account status helpers (active, suspended, pending, etc.)
 
-### 🛡️ Roles & Permissions
+### 🛡️ Roles & Permissions Management By Admin
 - Preconfigured roles, permissions, middleware, and seeders  
 - Helper functions such as:
   - `userHasPermission()`

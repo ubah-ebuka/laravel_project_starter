@@ -1,33 +1,42 @@
 <?php
 
-namespace App\Http\Controllers\Customer;
+namespace App\Http\Controllers;
 
 use App\DTOs\OtpDTO;
 use App\Models\User;
 use App\DTOs\UserDTO;
+use App\Models\Permission;
 use App\Traits\ApiResponse;
+use App\Services\OtpService;
 use Illuminate\Http\Request;
 use App\Services\UserService;
 use App\Enums\CurrencyCodeEnum;
 use App\Enums\OtpActionTypeEnum;
+use App\Notifications\GeneralNoty;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Customer\UserConfirmPasswordResetRequest;
+use App\Http\Requests\Admin\ChangeAdminRoleRequest;
+use App\Http\Requests\Admin\ChangeCustomerRoleRequest;
+use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Resources\Customer\UserResource;
+use App\Services\NotificationService;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\Customer\UserLoginRequest;
+use App\Http\Requests\Admin\UserLoginRequest as AdminUserLoginRequest;
+use App\Http\Requests\Admin\MapUserPermissionRequest;
+use App\Http\Requests\ChangePasswordRequest;
 use App\Http\Requests\Customer\UserRegistrationRequest;
 use App\Http\Requests\Customer\UserResetPasswordRequest;
-use App\Models\Permission;
-use App\Notifications\GeneralNoty;
-use App\Services\NotificationService;
-use App\Services\OtpService;
-use App\Services\SmsService;
-use Illuminate\Support\Facades\URL;
-use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\Customer\UserConfirmPasswordResetRequest;
+use App\Models\UserPermission;
+use App\Traits\PaginationTrait;
+use Exception;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    use ApiResponse;
+    use ApiResponse, PaginationTrait;
 
     public function register(UserRegistrationRequest $userRegistrationRequest, UserService $userService)
     {
@@ -46,7 +55,19 @@ class UserController extends Controller
         $userService->createUser($userDTO);
         
         $user = User::where(['email' => $payload['email'], 'type' => 'customer', 'status' => 'active'])->first();
-        Auth::login($user);
+        Auth::guard('customer')->login($user);
+        Auth::setUser($user);
+
+        $user->notify(new GeneralNoty([
+            'type' => 'email',
+            'recipient' => $user->email,
+            'user_id' => $user->id,
+            'subject' => 'Welcome to '. config('app.name'),
+            'data' => [
+                'user' => $user
+            ],
+            'view' => 'customer.welcome'
+        ]));
         
         return $this->user(message: "Registered successfully.");
     }
@@ -55,16 +76,32 @@ class UserController extends Controller
     {
         $payload = $userLoginRequest->validated();
         $user = $userLoginRequest->getValidatedUser();
-        Auth::login($user);
+        Auth::guard('customer')->login($user);
+        Auth::setUser($user);
+        
+        return $this->user(message: "Logged in successfully.");
+    }
+
+    public function adminLogin(AdminUserLoginRequest $userLoginRequest)
+    {
+        $payload = $userLoginRequest->validated();
+        $user = $userLoginRequest->getValidatedUser();
+        Auth::guard('admin')->login($user);
+        Auth::setUser($user);
         
         return $this->user(message: "Logged in successfully.");
     }
 
     public function logout(Request $request)
     {
-        Auth::guard('web')->logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        Auth::guard('customer')->logout();
+
+        return $this->successResponse(null, 'User logged out successfully.', 200);
+    }
+
+    public function adminLogout(Request $request)
+    {
+        Auth::guard('admin')->logout();
 
         return $this->successResponse(null, 'User logged out successfully.', 200);
     }
@@ -72,25 +109,8 @@ class UserController extends Controller
     public function user($message = "User profile retrieved successfully.")
     {
         $user = request()->user();
-
-        $permissionsByRole = Permission::where("permissions.type", 'customer')->leftJoin('role_permissions', 'permissions.id', '=', 'role_permissions.permission_id')
-            ->where('role_permissions.role_id', $user->role_id)
-            ->select('permissions.identifier')
-            ->get()->pluck('identifier')->toArray();
-
-        $permissionsByUser = Permission::where("permissions.type", 'customer')->leftJoin('user_permissions', 'permissions.id', '=', 'user_permissions.permission_id')
-            ->where('user_permissions.user_id', $user->id)
-            ->select('permissions.identifier')
-            ->get()->pluck('identifier')->toArray();
-
-        $permissions = array_merge($permissionsByRole, $permissionsByUser);
-
-        $response = [
-            'user' => new UserResource($user),
-            'permissions' => $permissions
-        ];
-
-        return $this->successResponse($response, $message, 200);
+        $user->attachPermissions();
+        return $this->successResponse(new UserResource($user), $message, 200);
     }
 
     public function passwordReset(UserResetPasswordRequest $request, OtpService $otpService)
@@ -115,7 +135,8 @@ class UserController extends Controller
             'user_id' => $user->id,
             'subject' => 'Password Reset OTP',
             'data' => [
-                'resetUrl' => $resetUrl
+                'resetUrl' => $resetUrl,
+                'user' => $user
             ],
             'view' => 'customer.reset-password'
         ]));
@@ -164,7 +185,8 @@ class UserController extends Controller
             'user_id' => $user->id,
             'subject' => 'Verify Your Email Address',
             'data' => [
-                'verificationUrl' => $verificationUrl
+                'verificationUrl' => $verificationUrl,
+                'user' => $user
             ],
             'view' => 'customer.email-verification'
         ]));
@@ -243,5 +265,75 @@ class UserController extends Controller
         $otpService->invalidateOtps(recipient: $user->phone, actionType: OtpActionTypeEnum::PHONE_VERIFICATION->value);
 
         return $this->successResponse(null, "Phone number verified successfully.", 200);
+    }
+
+    public function mapPermissions(MapUserPermissionRequest $mapUserPermissionRequest) 
+    {
+        $mappings = $mapUserPermissionRequest->mappedUserPermission;
+        $user = $mapUserPermissionRequest->user;
+
+        DB::beginTransaction();
+
+        try{
+            UserPermission::where(['user_id' => $user->id])->delete();
+            UserPermission::insert(array_values($mappings));
+            DB::commit();
+
+            cache()->forget("compute_user_permissions_{$user->id}");
+
+            return $this->successResponse(null, 'Roles mapped successfully.', 200);
+        }catch(Exception $error) {
+            DB::rollBack();
+            return $this->failedResponse("Roles not mapped", 422);
+        }
+    }
+
+    public function customers()
+    {
+        return $this->users('customer');
+    }
+
+    public function admins()
+    {
+        return $this->users('admin');
+    }
+
+    public function users(string $type) {
+        $users = User::where('type', $type)->orderBy('id', 'desc')->paginate(20);
+
+        return $this->successResponse($this->usePagination(UserResource::collection($users), $users), "Fetched users successfully.", 200);
+    }
+
+    public function changePassword(ChangePasswordRequest $changePasswordRequest)
+    {
+        $user = request()->user();
+        $validated = $changePasswordRequest->validated();
+
+        $user->password = Hash::make($validated['new']);
+        $user->save();
+
+        return $this->successResponse(null, "Password updated successfully.", 200);
+    }
+
+    public function changeRole(User $user, int $roleId)
+    {
+        $user->role_id = $roleId;
+        $user->save();
+    }
+
+    public function changeCustomerRole(ChangeCustomerRoleRequest $changeCustomerRoleRequest)
+    {
+        $validated = $changeCustomerRoleRequest->validated();
+        $this->changeRole($changeCustomerRoleRequest->user, $validated['role']);
+
+        return $this->successResponse(null, "Customer role updated successfully.", 200);
+    }
+
+    public function changeAdminRole(ChangeAdminRoleRequest $changeAdminRoleRequest)
+    {
+        $validated = $changeAdminRoleRequest->validated();
+        $this->changeRole($changeAdminRoleRequest->user, $validated['role']);
+        
+        return $this->successResponse(null, "Admin role updated successfully.", 200);
     }
 }

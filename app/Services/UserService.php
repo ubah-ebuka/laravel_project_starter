@@ -6,6 +6,7 @@ use App\Models\Role;
 use App\Models\User;
 use App\DTOs\UserDTO;
 use App\Enums\RoleEnum;
+use App\Models\Permission;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
@@ -33,9 +34,9 @@ class UserService {
 
             // Assign default role or permissions if needed
             if ($userDTO->type === 'customer') {
-                $user->role_id = Role::where(['name' => RoleEnum::CUSTOMER->value, 'type' => 'customer'])->first()->id;
+                $user->role_id = Role::where(['identifier' => RoleEnum::CUSTOMER->value, 'type' => 'customer'])->first()->id;
             } elseif ($userDTO->type === 'admin') {
-                $user->role_id = Role::where(['name' => RoleEnum::ADMIN->value, 'type' => 'admin'])->first()->id;
+                $user->role_id = Role::where(['identifier' => RoleEnum::ADMIN->value, 'type' => 'admin'])->first()->id;
             }
 
             $user->save();
@@ -71,5 +72,13 @@ class UserService {
     public function isUserActive(User $user): bool
     {
         return $user->status === 'active';
+    }
+
+    public function hasPermission($permission): bool
+    {
+        $user = request()->user();
+        $mergedPermissions = User::fetchPermissions($user);
+
+        return isset($mergedPermissions[$permission]);
     }
 }

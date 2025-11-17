@@ -2,6 +2,8 @@
 
 use App\Traits\ApiResponse;
 use App\Enums\RequestActionEnum;
+use App\Http\Middlewares\Customer\PermissionGuard as CustomerPermissionGuard;
+use App\Http\Middlewares\Admin\PermissionGuard as AdminPermissionGuard;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
@@ -12,6 +14,7 @@ use Illuminate\Foundation\Configuration\Middleware;
 use App\Http\Middlewares\Customer\EmailVerificationGuard;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use App\Http\Middlewares\Customer\Authenticate as AuthenticateCustomer;
+use App\Http\Middlewares\Admin\Authenticate as AuthenticateAdmin;
 use App\Http\Middlewares\Customer\PhoneNumberVerificationGuard;
 use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
 
@@ -43,6 +46,9 @@ return Application::configure(basePath: dirname(__DIR__))
             'customer-auth' => AuthenticateCustomer::class,
             'email-verified' => EmailVerificationGuard::class,
             'phone-verified' => PhoneNumberVerificationGuard::class,
+            'customer-has' => CustomerPermissionGuard::class,
+            'admin-has' => AdminPermissionGuard::class,
+            'admin-auth' => AuthenticateAdmin::class,
         ]);
 
         $middleware->group('web-api', [
@@ -77,8 +83,16 @@ return Application::configure(basePath: dirname(__DIR__))
             if ($request->expectsJson()) {
                 $statusCode = $e->getStatusCode();
 
+                $messages = [
+                    401 => "Not authenticated",
+                    403 => "Not authorized",
+                    404 => "Resource not found",
+                    422 => "Request error",
+                    419 => "CSRF token mismatch"
+                ];
+
                 return $trait->failedResponse(
-                    message: $e->getMessage() ?: 'Something went wrong',
+                    message: $messages[$statusCode] ?? 'Something went wrong',
                     statusCode: $statusCode,
                     responseCode: match($statusCode) {
                         401 => RequestActionEnum::NOT_AUTHENTICATED,

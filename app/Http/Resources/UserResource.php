@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Resources\Customer;
+namespace App\Http\Resources;
 
+use App\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -19,7 +20,8 @@ class UserResource extends JsonResource
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
             'email' => $this->email,
-            'phone' => $this->phone
+            'phone' => $this->phone,
+            'permissions' => PermissionResource::collection($this->whenLoaded('permissions'))
         ];
     }
 }

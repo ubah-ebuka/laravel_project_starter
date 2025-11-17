@@ -39,6 +39,22 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+            'session' => 'web_session', 
+        ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'users',
+            'session' => 'admin_session', 
+        ],
+        'customer' => [
+            'driver' => 'session',
+            'provider' => 'users',
+            'session' => 'customer_session', 
+        ],
+        'api' => [
+            'driver' => 'sanctum',
+            'provider' => 'users',
+            'session' => 'api_session', 
         ],
     ],
 

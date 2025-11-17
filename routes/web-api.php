@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Customer\UserController;
+use App\Http\Controllers\UserController;
 
 Route::group(['prefix' => 'v1'], function() {
     Route::group(['prefix' => 'auth', 'as' => 'auth.'], function() {
@@ -11,7 +11,7 @@ Route::group(['prefix' => 'v1'], function() {
         Route::post('login', [UserController::class, 'login'])
             ->name('login');
 
-        Route::middleware(['auth:sanctum', 'web-api', 'customer-auth'])->group(function() {
+        Route::middleware(['auth:customer', 'web-api', 'customer-auth'])->group(function() {
             Route::get('logout', [UserController::class, 'logout'])
             ->name('logout');
 
@@ -30,7 +30,7 @@ Route::group(['prefix' => 'v1'], function() {
         ->name('verify')->middleware('signed');
     });
 
-    Route::middleware(['auth:sanctum', 'web-api', 'customer-auth'])->group(function() {
+    Route::middleware(['auth:customer', 'web-api', 'customer-auth'])->group(function() {
         Route::group(['prefix' => 'email', 'as' => 'email.'], function() {
             Route::get('send-verification', [UserController::class, 'sendEmailVerificationOtp'])
             ->name('sendVerification');
@@ -48,9 +48,9 @@ Route::group(['prefix' => 'v1'], function() {
         });
     });
 
-    Route::middleware(['auth:sanctum', 'web-api', 'customer-auth', 'email-verified', 'phone-verified'])->group(function() {
+    Route::middleware(['auth:customer', 'web-api', 'customer-auth', 'email-verified', 'phone-verified'])->group(function() {
         // Protected routes can be added here
-        Route::get('password/change', [UserController::class, 'passwordChange'])
+        Route::post('password/change', [UserController::class, 'changePassword'])
                 ->name('password.change');
     });
 });

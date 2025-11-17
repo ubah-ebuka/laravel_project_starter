@@ -15,6 +15,8 @@ enum PermissionEnum: string
     case ADMIN_ADD_ROLE = 'admin_add_role';
     case ADMIN_UPDATE_USER_STATUS = 'admin_update_user_status';
     case ADMIN_ADD_PERMISSION = 'admin_add_permission';
+    case ADMIN_CHANGE_CUSTOMER_ROLE = 'admin_change_customer_role';
+    case ADMIN_CHANGE_ADMIN_ROLE = 'admin_change_admin_role';
 
     private const META = [
         self::ACCESS_CUSTOMER_DASHBOARD->value => [
@@ -81,6 +83,18 @@ enum PermissionEnum: string
             'type' => 'admin',
             'description' => 'Allows admin to add new permissions',
             'label' => 'Add New Permission',
+            'roles' => [RoleEnum::SUPER_ADMIN]
+        ],
+        self::ADMIN_CHANGE_CUSTOMER_ROLE->value => [
+            'type' => 'admin',
+            'description' => 'Allows admin to change customer role',
+            'label' => 'Change Customer Role',
+            'roles' => [RoleEnum::SUPER_ADMIN]
+        ],
+        self::ADMIN_CHANGE_ADMIN_ROLE->value => [
+            'type' => 'admin',
+            'description' => 'Allows admin to change admin role',
+            'label' => 'Change Admin Role',
             'roles' => [RoleEnum::SUPER_ADMIN]
         ],
     ];
